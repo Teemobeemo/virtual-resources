@@ -18,7 +18,7 @@ def sign_in(request):
         password = form.cleaned_data.get("password")
         user = authenticate(username = username,password = password)
         login(user = user,request = request)
-        if nextA is not "":
+        if nextA != "":
             print(nextA)
             return redirect(nextA)
 
