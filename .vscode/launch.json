@@ -8,7 +8,7 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/virtualresources/manage.py",
+            "program": "${workspaceFolder}/web50/projects/2020/x/capstone/virtualresources/manage.py",
             "args": [
                 "runserver",
             ],
