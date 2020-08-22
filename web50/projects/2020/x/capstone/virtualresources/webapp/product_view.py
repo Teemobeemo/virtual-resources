@@ -139,6 +139,7 @@ def sell_product(request):
             product: Product = product_creation_form.save(commit=False)
             product.seller = request.user
             product.save()
+            return redirect('explore')
 
     return render(
         request,

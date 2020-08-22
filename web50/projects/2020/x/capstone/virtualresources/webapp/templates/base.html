@@ -15,7 +15,8 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <img src={% static "images/logo.png" %} alt="logo" width="125px">
+                <h1 id="logoh1">SparkCart</h1>
+                <!-- <img src={% static "images/logo.png" %} alt="logo" width="125px"> -->
             </div>
             <nav>
                 <ul id="MenuItems">
@@ -41,8 +42,7 @@
             <img src={% static "images/menu.png" %} alt="menu icon" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
-    {% block body %}
-    {% endblock %}
+    {% block body %} {% endblock %}
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -56,10 +56,8 @@
                 </div>
                 <div class="footer-col-2">
                     <img alt="logo" src={% static "images/logo-white.png" %}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis
-                        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                        consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                 </div>
                 <div class="footer-col-3">
                     <h3>Useful Links</h3>
@@ -95,8 +93,7 @@
         function menutoggle() {
             if (MenuItems.style.maxHeight == "0px") {
                 MenuItems.style.maxHeight = "200px";
-            }
-            else {
+            } else {
                 MenuItems.style.maxHeight = "0px";
             }
         }
