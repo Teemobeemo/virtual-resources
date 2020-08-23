@@ -149,7 +149,7 @@ def sell_product(request):
 
 import random 
 
-@login_required(login_url='signin/')
+@login_required(login_url='/signin')
 def gift_card(request):
     if request.POST:
         user:UserProfile = request.user

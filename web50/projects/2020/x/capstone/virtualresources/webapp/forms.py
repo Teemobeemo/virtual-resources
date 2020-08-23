@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django import forms
 from .models import Ratings, UserProfile,Product
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # CreateProductForm 
 class CreateProductForm(forms.ModelForm):
@@ -19,7 +20,7 @@ class CreateProductForm(forms.ModelForm):
 # CreateRatingForm
 class CreateRatingForm(forms.ModelForm):
     text = forms.CharField(max_length=200)
-    rating_num = forms.IntegerField()
+    rating_num = forms.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     class Meta:
         model = Ratings
