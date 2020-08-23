@@ -9,7 +9,7 @@ This project has the following features:
 4.  Buy a product
 5.  Leave a rating for the product
 6.  View all the ratings for the product 
-7.  Use the gift card feature to earn some money
+7.  Use the gift card feature to earn some money 
    
 [forms.py](/virtualresources/webapp/forms.py) : Contains form models
 
@@ -25,3 +25,4 @@ This project has the following features:
 
 [models.py](/virtualresources/webapp/models.py): Model Schema (UserProfile, Ratings and Product)
 
+Link to [Youtube Video](https://www.youtube.com/watch?v=OYcLeGBn6oo)
