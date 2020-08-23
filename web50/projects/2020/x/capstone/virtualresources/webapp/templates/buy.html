@@ -1,19 +1,15 @@
 {% extends "base.html" %} {% block title %} Buy {{product.title}} {% endblock %} {% block body %}
 
-<!-- Display the not_enough_error -->
-<!-- TODO make them clickable -->
-{% if not_enough_error %}
-<h1>Seems you don't have enough money to buy this product</h1>
-<p>Go to this link to redeem a gift card or here to sell a product</p>
-{% endif %} {% if same_user%}
-<h1>You can't buy your own product!</h1>
-<p>Explore other products!</p>
-{% else %} {% if product %}
-
 <!-- Card view -->
 <div class="row">
-    <div class="col-4">
-
+    <div class="about-form">
+        {% if not_enough_error %}
+        <h1>Seems you don't have enough money to buy this product</h1>
+        <p>Go to this link to <a href="/gift">redeem a gift card</a> or here to <a href="/sell"> sell a product</a></p>
+        {% else %} {% if same_user%}
+        <h1>You can't buy your own product!</h1>
+        <p><a href="/explore">Explore other products!</a></p>
+        {% else %} {% if product %}
         <!-- TODO add this image later -->
         <!-- <img src="images/product-1.jpg"> -->
         <h2> {{product.name}}</h4>
@@ -70,15 +66,15 @@
                 <i class="fa fa-star" aria-hidden="true"></i> {% endfor %} {% endwith %}
             </div>
             <p>{{rating.text}}</p>
-            <br> {% endfor %} {% endif %}
+            <br> {% endfor %} {% endif %} {% else %}
+            <h3>We could not find the product you specified!</h3>
+            <form action="/explore">
+                {% csrf_token %}
+
+                <button type="submit">Go back to exploring more products</button>
+            </form>
+            {% endif %} {% endif %} {%endif %}
     </div>
 
 </div>
-{% else %}
-<h3>We could not find the product you specified!</h3>
-<form action="/explore">
-    {% csrf_token %}
-
-    <button type="submit">Go back to exploring more products</button>
-</form>
-{% endif %} {% endif %} {% endblock %}
+{% endblock %}
